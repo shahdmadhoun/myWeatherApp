@@ -1,38 +1,69 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h3 class="text-center my-4">Search for Weather:</h3>
-            <form [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)">
-              <div class="form-group">
-                <input
-                  class="form-control"
-                  type="text"
-                  id="weatherLocation"
-                  aria-describedby="weatherLocation"
-                  placeholder="Please input a Location"
-                  formControlName="location"/>
-               </div>
-               <br>
-               <div class="text-center"> 
-                <button type="submit" class="btn btn-success btn-md">
-                  Search for the weather</button>
-                  
-               </div>
-             </form> 
-          </div>
+  <div class="row">
       <div class="col-md-6">
-        <h3 class="text-center my-4">Weather Details:</h3>
-        <p class="text-center">Current weather conditions: 
-            <span *ngFor="let info of this.weatherData?.weather">{{info.description | json}}</span>
-        </p>
-        <p class="text-center">Temperature in Degrees Celsius: {{ this.weatherData?.main.temp - 273.15 | number: '1.0-0'}}</p>
-        <p class="text-center">Temperature in Degrees kalfen: {{ this.weatherData?.main.temp | number: '1.0-0'}}</p>
-        <p class="text-center">Feels like in Degrees Celsius: {{ this.weatherData?.main.feels_like - 273.15 | number: '1.0-0'}}</p>
-        <p class="text-center">Feels like in Degrees kalfen: {{ this.weatherData?.main.feels_like | number: '1.0-0'}}</p>
-        <p class="text-center">Location Searched: {{this.weatherData?.name}}</p>
-
+        <h3 class="text-center my-4">Search for Weather:</h3>
+        <form [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)">
+          <div class="form-group">
+            <input
+              class="form-control"
+              type="text"
+              id="weatherLocation"
+              aria-describedby="weatherLocation"
+              placeholder="Please input a Location"
+              formControlName="location"/>
+          </div>
+          <br>
+          <div class="text-center"> 
+            <button type="submit" class="btn btn-success btn-md">
+            Search for the weather</button>
+          </div>
+        </form> 
     </div>
-    </div>
+  </div>
 </div>
-  
-  
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-10 col-lg-8 col-xl-6">
+
+        <div class="card bg-dark text-white" style="border-radius: 40px;">
+          <div class="bg-image" style="border-radius: 35px;">
+            <img 
+            src="../../assets/img/Clear.jfif"
+            class="card-img"
+            alt="weather"
+            style="border-radius: 40px;"
+          />
+          <!-- <div *ngFor="let photo of photos | keyvalue">
+            <div *ngFor="let info of weatherData?.weather">
+              <img *ngIf="info.main == photo.key"
+              [src]="photo.value"
+              class="card-img"
+              alt="weather"
+              style="border-radius: 40px;"
+            />
+
+            </div>
+          </div> -->
+
+            <div class="mask" style="background-color: rgba(190, 216, 232, .5);"></div>
+          </div>
+          <div class="card-img-overlay text-dark p-5">
+            <h4 class="mb-0">{{  cityName  }}</h4>
+            <p class="display-2 my-3">{{ tempCelsius | number: '1.0-0'}}°C</p>
+            <p class="mb-2">Feels Like: <strong>{{ feelCelsius | number: '1.0-0'}}°C</strong></p>
+            <h5>{{weatherInfo | json}}</h5>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
