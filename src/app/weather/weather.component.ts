@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiDataService } from "../api-data.service";
+import { DatePipe } from '@angular/common'
+
 
 @Component({
   selector: 'app-weather',
@@ -14,15 +16,16 @@ export class WeatherComponent implements OnInit {
   public feelCelsius = 0;
   public cityName = 'City';
   public weatherInfo = 'Clear';
+  public date = new Date();
 
-  constructor(private formBuilder: FormBuilder, private dataService: ApiDataService) { }
+  constructor(private formBuilder: FormBuilder, private dataService: ApiDataService,
+    public datepipe: DatePipe) { }
 
   ngOnInit(): void {
     this.weatherSearchForm = this.formBuilder.group({
       location: ['']
     });
   }
-
   sendToAPIXU(formValues:any) {
     this.dataService
     .getWeather(formValues.location)

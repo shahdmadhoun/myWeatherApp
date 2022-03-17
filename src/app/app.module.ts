@@ -8,6 +8,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiDataService } from "./api-data.service";
+import { DatePipe } from '@angular/common'
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { ApiDataService } from "./api-data.service";
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ApiDataService],
+  providers: [ApiDataService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
