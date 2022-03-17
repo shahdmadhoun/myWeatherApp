@@ -16,3 +16,45 @@
   .form-control::placeholder  {
     font-family: FontAwesome;
   }
+
+
+  
+
+   .card {
+    background-image: url("https://i.imgur.com/dpqZJV5.jpg");
+    background-size: cover;
+    width: 600px;
+    height: 350px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px 4px #9E9E9E;
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+
+.ml-auto {
+  color: white;
+}
+
+.time-font {
+    font-size: 50px;
+    color: white;
+
+}
+
+.sm-font {
+    font-size: 18px;
+    color: white;
+
+}
+
+.med-font {
+    font-size: 28px;
+    color: white;
+
+}
+
+.large-font {
+    font-size: 60px;
+    color: white;
+
+}
